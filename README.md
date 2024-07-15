@@ -48,3 +48,25 @@ update-alternatives --list
 update-alternatives --config python3
 
 
+You can verify now how Python version 3.12 works in comparison with default Python version 3.6:
+
+python3.12 -c 'import sklearn;import torch;' =>> works OK without errors !!!
+
+python3.6 -c 'import sklearn;import torch;' =>> crash with without errors:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/local/lib64/python3.6/site-packages/torch/__init__.py", line 196, in <module>
+    _load_global_deps()
+  File "/usr/local/lib64/python3.6/site-packages/torch/__init__.py", line 149, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/usr/lib64/python3.6/ctypes/__init__.py", line 343, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: dlopen: cannot load any more object with static TLS
+
+
+
+
+
+
+
