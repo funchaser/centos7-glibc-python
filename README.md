@@ -52,7 +52,7 @@ You can verify now how Python version 3.12 works in comparison with default Pyth
 
 python3.12 -c 'import sklearn;import torch;' =>> works OK without errors !!!
 
-python3.6 -c 'import sklearn;import torch;' =>> crash with without errors:
+python3.6 -c 'import sklearn;import torch;' =>> crash with errors:
 
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
